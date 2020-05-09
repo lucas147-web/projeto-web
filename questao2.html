@@ -8,7 +8,7 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" >
-     <!--Bootstrap js-->>
+     <!--Bootstrap js-->
      <link rel="stylesheet" href="js/bootstrap.js">
    
     <!-- CSS Topo e Rodapé -->
@@ -53,7 +53,78 @@
     </header>
     
     <main role="main" class="container">
+        <!--Questão 2-->
+<script>
+function clientes(){
+ nome_c     = cadastro_cliente.nome.value;
+ produto_c  = cadastro_cliente.produto.value;
+ valor_c    = cadastro_cliente.valor.value;
+ qtds_c     = cadastro_cliente.qtds.value;
+ parcelas_c = cadastro_cliente.parcelas.value;
 
+multi = (qtds*produto_c)
+div = (multi/parcelas_c)
+document.write()
+
+}
+if(parcelas_c>=6){ 
+acrescimo =((" com scréscimo de: ")+ parseFloat(multi)*0.12);
+
+}
+else if ((parcelas_c>=3)&&(parcelas_c<=5)){
+acrescimo =((" com scréscimo de: ")+parseFloat(multi)*0.06);
+
+}
+else{
+  acrescimo = (" sem acréscimo");
+
+}
+for(i=1; i<=parcelas_c;i++){
+
+
+document.getElementById("linha"+i).innerHTML =
+("<align: center>======================================================================");
+("<align: center>LOJÃO TOP 10");
+document.write("cliente: "+nome_c);
+document.write("produtos(s): "+produto_c);
+document.write("Valor: "+div);
+document.write("parcelas: "+parcelas_c);
+document.write("Total: "+multi+acrescimo);
+
+
+
+
+}
+</script>
+
+
+
+
+        <!--Formularios -->
+        <form name="cadastro_cliente" method="POST">
+          <div class="form-group">
+            <label for="exampleInputEmail1" >Nome</label>
+            <input type="text" class="form-control" id="nome_form" name="nome" placeholder="Example: Lucas" >
+            
+            <label for="exampleInputEmail1">produto</label>
+            <input type="text" class="form-control"name="produto" id="produto_form" >
+            
+            <label for="exampleInputEmail1">valor</label>
+            <input type="text" class="form-control" id="valor_form" name="valor" >
+           
+            <label for="exampleInputEmail1">Qtds.Produtos</label>
+            <input type="number" name="qtds" class="form-control" id="qtds_form" min="1">
+           
+            <label for="exampleInputEmail1">Parcelas</label>
+          <input type="number" name="parcelas" class="form-control" id="parcelas_form" max="6"min="0" >
+            
+          </div>
+         
+          </div>
+          
+           
+          <button onclick="clientes" type="submit" class="btn btn-primary">confirmar</button>
+        </form>
   
 
     </main>

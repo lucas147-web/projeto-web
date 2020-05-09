@@ -8,7 +8,7 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" >
-    <!--Bootstrap js-->>
+    <!--Bootstrap js-->
     <link rel="stylesheet" href="js/bootstrap.js">
    
     <!-- CSS Topo e Rodapé -->
@@ -52,7 +52,7 @@
       </nav>
     </header>
     <!--Questão 2-->
-
+    <main role="main" class="container">
     <script>
       nome          = prompt("Informe o nome do Aluno");
       disciplina    = prompt("Informe a  Disciplina") ;
@@ -60,21 +60,27 @@
       nota2         = prompt("Nota2 (0.00 a 10)");
      
       media         = (parseFloat(nota1)+parseFloat(nota2))/2;
+     if(media>=7.0){
+       document.write("<br> Resultado: "+nome+", "+disciplina+)
+     }
+     else if(media>){
+
+     }
+     document.write("<br>Resultado");
+     document.write("<br>Aluno: "+ nome);
+     document.write("<br>Disciplina: "+disciplina);
+     document.write("<br>Nota 1: "+nota1);
+     document.write("<br>Nota 2: "+nota2);
      
-     document.write("Resultado");
-     document.write("Aluno: "+ nome);
-     document.write("Disciplina: "+disciplina);
-     document.write("Nota 1: "+nota1);
-     document.write("Nota 2: "+nota2);
      
-     
-     document.write("<opa ta aqui: "+media.toFixed(1));
+     document.write("<br>opa ta aqui: "+media.toFixed(1));
 
   
     </script>
+    </main>
     
     <footer class="footer">
-        <div class="container">
+        <div class="container"></div>
           <span class="text-muted">Site desenvolvido por Damião Lucas - Code in <a target="_blank" href="https://github.com/lucas147-web/projeto-web.git">GitHub</a> </span>
         </div>
     </footer>
