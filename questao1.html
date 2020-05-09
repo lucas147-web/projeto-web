@@ -7,7 +7,9 @@
     <title>Projeto WEB - AV1</title>
     
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css" >
+    <!--Bootstrap js-->>
+    <link rel="stylesheet" href="js/bootstrap.js">
    
     <!-- CSS Topo e Rodapé -->
     <link href="css/starter-template.css" rel="stylesheet">
@@ -19,32 +21,7 @@
       }
     </style>
  
- <script>
-    function media() {
-        var nome = calcular_media.nome.value;
-        var disc = calcular_media.disciplina.value;
-        var nota1 = calcular_media.nota1.value;
-        var nota2 = calcular_media.nota2.value;
-        var mini = calcular_media.mini.value;
-        media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
-        //alert(nome + "," + disc + "," + nota1 + "," + nota2 + "," + media)
-        if (media < mini) {
-            var situ = "Reprovado!"
-        }
-        else {
-            var situ = "Aprovado!"
-        }
 
-        document.getElementById("nom").innerHTML = (nome);
-        document.getElementById("disc").innerHTML = (disc);
-        document.getElementById("no1").innerHTML = (nota1);
-        document.getElementById("no2").innerHTML = (nota2);
-        document.getElementById("media").innerHTML = (media);
-        document.getElementById("situ").innerHTML = (situ);
-
-
-    }
-</script>
   </head>
 
   <body>
@@ -74,6 +51,21 @@
           </div>
       </nav>
     </header>
+    // Questão 2
+    <script>
+      document.write("<br>=============================================================="")
+      nome          =prompt ("<br>Informe o nome do Aluno");
+      disciplina    =prompt ("<br>Informe a  Disciplina") ;
+      nota1         =prompt ("<br>Nota1 (0.00 a 10)");
+      nota2         =prompt ("<br>Nota2 (0.00 a 10)");
+     
+      media         =prompt (parsefloat(nota1)+parseFloat(nota2))/2;
+     
+     document.write("<br>Resultado")
+     document.write("opa ta aqui: "+media)
+
+         
+     </script>
     
     <footer class="footer">
         <div class="container">
