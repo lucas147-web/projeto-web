@@ -56,78 +56,92 @@
         <!--Questão 2-->
 <script>
 function clientes(){
- nome_c     = cadastro_cliente.nome.value;
- produto_c  = cadastro_cliente.produto.value;
- valor_c    = cadastro_cliente.valor.value;
- qtds_c     = cadastro_cliente.qtds.value;
- parcelas_c = cadastro_cliente.parcelas.value;
-
-multi = (qtds*produto_c)
+var nome_c     = cadastro_cliente.nome.value;
+var produto_c  = cadastro_cliente.produto.value;
+var valor_c    = cadastro_cliente.valor.value;
+var qtds_c     = cadastro_cliente.qtds.value;
+var parcelas_c = cadastro_cliente.parcelas.value;
+ 
+multi = (qtds_c * valor_c);
 div = (multi/parcelas_c)
-document.write()
 
-}
-if(parcelas_c>=6){ 
-acrescimo =((" com scréscimo de: ")+ parseFloat(multi)*0.12);
+
+if (parcelas_c==6){ 
+acrescimo =(parseFloat(multi)*0.12);
 
 }
 else if ((parcelas_c>=3)&&(parcelas_c<=5)){
-acrescimo =((" com scréscimo de: ")+parseFloat(multi)*0.06);
+acrescimo = (parseFloat(multi)*0.06);
 
 }
-else{
-  acrescimo = (" sem acréscimo");
+else {
+  acrescimo = 0;
 
 }
-for(i=1; i<=parcelas_c;i++){
+for (i=1; i<=parcelas_c;i++){
+
 
 
 document.getElementById("linha"+i).innerHTML =
-("<align: center>======================================================================");
-("<align: center>LOJÃO TOP 10");
-document.write("cliente: "+nome_c);
-document.write("produtos(s): "+produto_c);
-document.write("Valor: "+div);
-document.write("parcelas: "+parcelas_c);
-document.write("Total: "+multi+acrescimo);
+"<br><br><br><align: center>======================================================================"+
+"<br><align: center><br>LOJÃO TOP 10"+
+"<br>cliente:"+nome_c.toUpperCase()+
+"<br>produtos(s):"+produto_c.toUpperCase()+
+"<br>Valor:"+parseFloat(div).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+"<br>parcelas:"+parseFloat(parcelas_c).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+"<br>Total:"+parseFloat(multi)+acrescimo+
+"<br><align: center>============================================================================"
 
-
+}
 
 
 }
 </script>
 
 
-
-
-
         <!--Formularios -->
-        <form name="cadastro_cliente" method="POST">
+        <form name="cadastro_cliente" method="POST" id="cadastro_cliente">
           <div class="form-group">
-            <label for="exampleInputEmail1" >Nome</label>
+            <label >Nome</label>
             <input type="text" class="form-control" id="nome_form" name="nome" placeholder="Example: Lucas" >
             
-            <label for="exampleInputEmail1">produto</label>
+            <label >produto</label>
             <input type="text" class="form-control"name="produto" id="produto_form" >
             
-            <label for="exampleInputEmail1">valor</label>
+            <label >valor</label>
             <input type="text" class="form-control" id="valor_form" name="valor" >
            
-            <label for="exampleInputEmail1">Qtds.Produtos</label>
+            <label>Qtds.Produtos</label>
             <input type="number" name="qtds" class="form-control" id="qtds_form" min="1">
            
-            <label for="exampleInputEmail1">Parcelas</label>
+            <label>Parcelas</label>
           <input type="number" name="parcelas" class="form-control" id="parcelas_form" max="6"min="0" >
-            
-          </div>
-         
-          </div>
-          
-           
-          <button onclick="clientes" type="button" class="btn btn-primary">confirmar</button>
+          </div>  
+          <button type="button" class="btn btn-primary"  onclick="clientes()">Enviar</button>
         </form>
   
-        <p id= "linha">resposta aqui</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div classe="folhinha">
+          <p id="linha1"></p>
+      </div>
+      <div classe="folhinha">
+          <p id="linha2"></p>
+      </div>
+      <div classe="folhinha">
+          <p id="linha3"></p>
+      </div>
+      <div classe="folhinha">
+          <p id="linha4"></p>
+      </div>
+      <div classe="folhinha">
+          <p id="linha5"></p>
+      </div>
+      <div classe="folhinha">
+          <p id="linha6"></p>
+      </div>
 
     </main>
     

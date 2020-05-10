@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -51,33 +50,77 @@
           </div>
       </nav>
     </header>
+        <!-- Conteúdo -->
+        <main role="main">
+          <div id="principal">
+                  <div  class="container">
+                      <div class="jumbotron">
+                      <h1>Calcular média</h1>
+                          <div style="padding: 0px 300px 0px 300px;">
+                              <form name="calcular_media">
+                                  <div class="form-group"></div>
+                                      <label for="nome">Nome do aluno</label>
+                                      <input required type="text" class="form-control" id="nome">
+                                  </div>
+  
+                                  <div class="form-group">
+                                      <label for="disciplina">Nome da disciplina</label>
+                                      <input required type="text" class="form-control" id="disciplina">
+                                  </div>
+  
+                                  <div class="form-group">
+                                      <label for="nota1">Nota 1</label>
+                                      <input required type="number" class="form-control" id="nota1" min="0">
+                                  </div>
+  
+                                  <div class="form-group">
+                                      <label for="nota2">Nota 2</label>
+                                      <input required type="number" class="form-control" id="nota2" min="0">
+                                  </div>
+  
+                                  <button onclick="media()" type="button" class="btn btn-primary">Gerar</button>
+                              </form>
+                      </div>
+  
     <!--Questão 2-->
     <main role="main" class="container">
-    <script>
-      nome          = prompt("Informe o nome do Aluno");
-      disciplina    = prompt("Informe a  Disciplina") ;
-      nota1         = prompt("Nota1 (0.00 a 10)");
-      nota2         = prompt("Nota2 (0.00 a 10)");
-     
-      media         = (parseFloat(nota1)+parseFloat(nota2))/2;
-     if(media>=7.0){
-       document.write("<br> Resultado: "+nome+", "+disciplina+)
-     }
-     else if(media>){
+      <script>
+            function media() {
+        var nome = calcular_media.nome.value;
+        var disc = calcular_media.disciplina.value;
+        var nota1 = calcular_media.nota1.value;
+        var nota2 = calcular_media.nota2.value;
+        media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
+        if (media < 7) {
+            var situ = "Reprovado!"
+        }
+        else {
+            var situ = "Aprovado!"
+        }
 
-     }
-     document.write("<br>Resultado");
-     document.write("<br>Aluno: "+ nome);
-     document.write("<br>Disciplina: "+disciplina);
-     document.write("<br>Nota 1: "+nota1);
-     document.write("<br>Nota 2: "+nota2);
-     
-     
-     document.write("<br>opa ta aqui: "+media.toFixed(1));
-
+        document.getElementById("resultado").innerHTML =
+"<align: center>======================================================================"+
+"<align: center><br>Resultado"+
+"<br>cliente:"+nome_c.toUpperCase()+
+"<br>produtos(s):"+(produto_c)+
+"<br>Valor:"+(div)+
+"<br>parcelas:"+(parcelas_c)+
+"<br>Total:"
+"<br><align: center>============================================================================================"
   
-    </script>
+      </script>
     </main>
+  </script>
+                <br>
+                <br>
+                <br>
+
+
+
+
+
+            </div> 
+
     
     <footer class="footer">
         <div class="container"></div>
@@ -92,4 +135,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
-</html>
+
+    </html>
