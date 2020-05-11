@@ -76,11 +76,12 @@
                                   <div class="form-group">
                                       <label for="nota2">Nota 2</label>
                                       <input required type="number" class="form-control" id="nota2" min="0">
-                                  </div>
-  
-                                  <button onclick="media()" type="button" class="btn btn-primary">Gerar</button>
+                                      
+                                    </div>
+                                    <button onclick="media()" type="button" class="btn btn-primary">Gerar</button>
+                                  
                               </form>
-                      </div>
+                    </div>
   
     <!--Questão 2-->
     <main role="main" class="container">
@@ -90,38 +91,36 @@
         var disc = calcular_media.disciplina.value;
         var nota1 = calcular_media.nota1.value;
         var nota2 = calcular_media.nota2.value;
-        media = (parseFloat(nota1) + parseFloat(nota2)) / 2;
-        if (media < 7) {
+        mediaa = (parseFloat(nota1) + parseFloat(nota2)) / 2;
+        if (mediaa < 7) {
             var situ = "Reprovado!"
         }
         else {
             var situ = "Aprovado!"
         }
 
-        document.getElementById("resultado").innerHTML =
-"<align: center>======================================================================"+
-"<align: center><br>Resultado"+
-"<br>cliente:"+nome_c.toUpperCase()+
-"<br>produtos(s):"+(produto_c)+
-"<br>Valor:"+(div)+
-"<br>parcelas:"+(parcelas_c)+
-"<br>Total:"
-"<br><align: center>============================================================================================"
-  
-      </script>
-    </main>
-  </script>
-                <br>
-                <br>
-                <br>
-
-
-
-
-
-            </div> 
-
-    
+                  document.getElementById("resultado").innerHTML =
+          "<align: center>======================================================================"+
+          "<align: center><br>Boletin"+
+          "<br>Aluno: "+nome.toUpperCase()+
+          "<br>Nota 1: "+nota1.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+          "<br>Nota 2: "+nota2.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+          "<br>"+
+          "<br>"+
+          "<br>Resultado"+
+          "<br>"+nome+", você foi "+situ+" na disciplina de "+disc+" com Média "+mediaa+"."+
+          "<br><align: center>============================================================================================"
+     
+      } 
+          </script>
+          
+          </main>
+          <br>
+          <br>
+          <br>
+          <br>
+          <p id="resultado"></p>
+              
     <footer class="footer">
         <div class="container"></div>
           <span class="text-muted">Site desenvolvido por Damião Lucas - Code in <a target="_blank" href="https://github.com/lucas147-web/projeto-web.git">GitHub</a> </span>
@@ -134,6 +133,9 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
+  
+  
     </body>
-
+    
     </html>

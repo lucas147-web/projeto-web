@@ -23,50 +23,137 @@
 
   </head>
 
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-          <a class="navbar-brand" href="index.html">Projeto WEB</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
+    <body>
+      <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand" href="index.html">Projeto WEB</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
 
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                  <a class="dropdown-item" href="questao1.html">Questão - 01</a>
-                  <a class="dropdown-item" href="questao2.html">Questão - 02</a>
-                  <a class="dropdown-item" href="questao3.html">Questão - 03</a>
-                  <a class="dropdown-item" href="questao4.html">Questão - 04</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-      </nav>
-    </header>
-    
-    <main role="main" class="container">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Questões</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="questao1.html">Questão - 01</a>
+                    <a class="dropdown-item" href="questao2.html">Questão - 02</a>
+                    <a class="dropdown-item" href="questao3.html">Questão - 03</a>
+                    <a class="dropdown-item" href="questao4.html">Questão - 04</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </nav>
+      </header>
+      
 
- 
-    </main>
-    
-    <footer class="footer">
-        <div class="container">
-          <span class="text-muted">Site desenvolvido por Damião Lucas - Code in <a target="_blank" href="https://github.com/lucas147-web/projeto-web.git">GitHub</a> </span>
-        </div>
-    </footer>
+                  <div class="container">
+                    <form name="imcc" id="imcc"> 
+                      <div class="col-sm-8">
+                        <div class="col-8">
+                          <label for="exampleInputEmail1">nome</label>
+                          <input type="text" class="form-control" id="nome" name="nome" aria-describedby="emailHelp">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-3">
+                          <div class="form-group">
+                              <label for="exampleInputEmail1">altura</label>
+                              <input type="text" class="form-control" id="altura" name="altura">
+                              <button onclick="imc()" style="margin-top: 10px;" type="button" class="btn btn-primary">Gerar</button>
+                          </div>
+                        </div>
+
+                        <div class="col-3">
+                          <div class="form-group">
+                            <label>Peso</label>
+                            <input type="text" class="form-control" id="peso" name="peso">
+                          </div>
+                        </div>
+                      </div>     
+                    </form>
+                  </div>  
+
+                  <script>
+                    function imc (){
+
+                    nomee = imcc.nome.value;
+
+                    pezo = imcc.peso.value;
+                    
+                    alt  = imcc.altura.value;
+                    
+                    alt2 = (alt * alt);
+
+                    imc2 = (pezo/alt2);
+
+                    if (imc2<18.5){
+                      result  = ("Baixo peso");
+                      result2 = ("Peso baixo para a altura. Maior Probabilidade de Anorexia.");
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+                    }
+                    else if ((imc2>=18.5)&&(imc2<=24.9)){
+                      result  = ("Peso normal");
+                      result2 = ("Maior probabilidade de ser um indivìduo saudável ")
+
+                    }
+                    else if ((imc2>=25)&&(imc2<=29.9)){
+                      result  = ("Pré-obesidade");
+                      result2 = ("Alguma probabilidade de problema de saúde. Predisposição a torna-se obeso");
+                    }
+                    else if ((imc2>=30)&&(imc2<=34.9)){
+                      result  = ("obesidade Grau I");
+                      result2 = ("Risco moderado de diabetes tipo II, hipertenção, colesterol, cardiopatia");
+                    }
+                    else if ((imc2>=35)&&(imc2<=39.9)){
+                      result  = ("obesidade Grau II");
+                      result2 = ("Risco Grave. Aumenta o risco das doenças associadas. O risco de mortabilidade aumenta 50%");
+                    }
+                    else if (imc2 > 40){
+                      result  = ("obesidade Grau III ou obesidade mórbida");
+                      result2 = ("Risco Muito Grave. O risco de doenças associadas, assim como a mortalidade aumenta em 90%");
+                    }
+                    else{
+                      result  = ("digite os valores");
+                      result2 = (" nos locais indicados.");
+
+                    }
+
+                    document.getElementById("indice_de").innerHTML = 
+
+                   "<br>--------------------------------------Resultado------------------------------------------" +
+
+                   "<br>Paciente:  "+nomee+
+                   "<br>Peso:  "+pezo+
+                   "<br>Altura:  "+alt+
+                   "<br>imc:  "+imc2
+                   "<br>Olá "+nomee+result+result2+"."
+
+
+
+                    }
+
+                    
+                  </script>
+                  <p id="indice_de" style="margin-left: 40px;"></p>
+
+                  <footer class="footer">
+                      <div class="container">
+                        <span class="text-muted">Site desenvolvido por Damião Lucas - Code in <a target="_blank" href="https://github.com/lucas147-web/projeto-web.git">GitHub</a> </span>
+                      </div>
+                  </footer>
+
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
 </html>
