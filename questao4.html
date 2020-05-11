@@ -91,31 +91,32 @@
                     alt2 = (alt * alt);
 
                     imc2 = (pezo/alt2);
+                    
 
-                    if (imc2<18.5){
+                    if (imc2.toFixed(1)<18.5){
                       result  = ("Baixo peso");
                       result2 = ("Peso baixo para a altura. Maior Probabilidade de Anorexia.");
 
 
                     }
-                    else if ((imc2>=18.5)&&(imc2<=24.9)){
+                    else if ((imc2.toFixed(1)>=18.5)&&(imc2.toFixed(1)<=24.9)){
                       result  = ("Peso normal");
                       result2 = ("Maior probabilidade de ser um indivìduo saudável ")
 
                     }
-                    else if ((imc2>=25)&&(imc2<=29.9)){
+                    else if ((imc2.toFixed(1)>=25)&&(imc2.toFixed(1)<=29.9)){
                       result  = ("Pré-obesidade");
-                      result2 = ("Alguma probabilidade de problema de saúde. Predisposição a torna-se obeso");
+                      result2 = ("Alguma probabilidade de problemas de saúde. Predisposição a torna-se obeso");
                     }
-                    else if ((imc2>=30)&&(imc2<=34.9)){
+                    else if ((imc2.toFixed(1)>=30)&&(imc2.toFixed(1)<=34.9)){
                       result  = ("obesidade Grau I");
                       result2 = ("Risco moderado de diabetes tipo II, hipertenção, colesterol, cardiopatia");
                     }
-                    else if ((imc2>=35)&&(imc2<=39.9)){
+                    else if ((imc2.toFixed(1)>=35)&&(imc2.toFixed(1)<=39.9)){
                       result  = ("obesidade Grau II");
                       result2 = ("Risco Grave. Aumenta o risco das doenças associadas. O risco de mortabilidade aumenta 50%");
                     }
-                    else if (imc2 > 40){
+                    else if (imc2.toFixed(1) > 40){
                       result  = ("obesidade Grau III ou obesidade mórbida");
                       result2 = ("Risco Muito Grave. O risco de doenças associadas, assim como a mortalidade aumenta em 90%");
                     }
@@ -132,8 +133,8 @@
                    "<br>Paciente:  "+nomee+
                    "<br>Peso:  "+pezo+
                    "<br>Altura:  "+alt+
-                   "<br>imc:  "+imc2
-                   "<br>Olá "+nomee+result+result2+"."
+                   "<br>imc:  "+(imc2.toFixed(1))+
+                   "<br>Olá "+nomee+" "+result+" "+result2+"."
 
 
 
